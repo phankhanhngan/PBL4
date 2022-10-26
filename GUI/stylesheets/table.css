@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+}
+.cpuinfo_container {
+    display: block;
+    background-color: rgb(46, 46, 46);
+    padding: 12px 12px;
+    height: 600px;
+}
+
+.search {
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.dataTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+
+
+.dataTable thead tr {
+    color: #8d8d8d;
+    font-weight: normal;
+    text-align: left;
+    border-bottom: 1px solid #8d8d8d;;
+}
+
+.dataTable  tbody tr {
+    color: #ffffff;
+}
+
+.dataTable th,
+.dataTable td {
+    padding: 12px 15px;
+}
+
+.dataTable th,
+.dataTable td {
+    padding: 12px 15px;
+}
+
+.dataTable tbody tr:nth-of-type(even) {
+    background-color: #4d4d4d7a;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.dataTable tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+
