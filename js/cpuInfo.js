@@ -1,4 +1,4 @@
-// const { exec } = require("child_process"); // required module to run shell script
+const { exec } = require("child_process"); // required module to run shell script
 // const { table } = require("console");
 
 // function listCpuInfos(fn) {
@@ -16,4 +16,5 @@
 // listCpuInfos( (listCpuInfo) => {
 //     // use info here
 // });
+exec("lscpu -J > ../txt/cpuInfo.json");
 
