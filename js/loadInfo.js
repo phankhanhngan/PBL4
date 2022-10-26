@@ -5,8 +5,7 @@
  * `contextIsolation` is turned on. Use the contextBridge API in `preload.js`
  * to expose Node.js functionality from the main process.
  */
-const {execSync} =
-    require("child_process"); // required module to run shell script
+const { execSync } = require("child_process"); // required module to run shell script
 
 // const fs = require("fs");
 function listCpuInfos() {
@@ -22,18 +21,20 @@ function listCpuInfos() {
 function fetchData() {
   listCpuInfos();
   fetch("../../txt/cpuInfo.json")
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        let table = document.querySelector("#cpuInfoTable");
-        let out = "";
-        for (let cpuDetail of data.lscpu) {
-          out += `
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      let table = document.querySelector("#cpuInfoTable");
+      let out = "";
+      for (let cpuDetail of data.lscpu) {
+        out += `
              <tr>
              <td width="30%">${cpuDetail.field}</td>
              <td witdh="70%">${cpuDetail.data}</td>
              </tr>
-             `
-        }
-        table.innerHTML = out;
-      });
+             `;
+      }
+      table.innerHTML = out;
+    });
 }

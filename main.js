@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain} = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const fs = require("fs");
 
@@ -7,16 +7,15 @@ const fs = require("fs");
 let win;
 
 async function createWindow() {
-
   // Create the browser window.
   win = new BrowserWindow({
-    width : 800,
-    height : 600,
-    webPreferences : {
-      nodeIntegration : true,
-      nodeIntegrationInSubFrames : true,
-      contextIsolation : false
-    }
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+      nodeIntegrationInSubFrames: true,
+      contextIsolation: false,
+    },
   });
 
   // Load app
