@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .head_container {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            background-color: rgb(27, 27, 27);
+        }
+        button {
+            background-color: transparent;
+            border: 0;
+            color: rgb(211, 211, 211);
+            padding: 4px 8px;
+            margin: 0 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(32,54,43,255);
+            color: rgba(0,156,73,255);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head_container">
+        <button>Refresh</button>
+        <button>Save to file</button>
+        <button>Copy to clipboard</button>
+    </div>
+</body>
+</html>

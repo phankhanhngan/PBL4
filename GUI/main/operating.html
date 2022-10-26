@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        background-color: black;
+    }
+    .collapsible_button {
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+ .collapsible_button:hover {
+    background-color: rgba(32,54,43,255);
+    color: rgba(0,156,73,255);
+    border-radius: 8px;
+}
+
+.collapse_data {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color: white;
+}
+</style>
+<body>
+    <div class="os_container">
+        <button class="collapsible_button">Version</button>
+        <div class="collapse_data">
+            <table>
+                <tr>
+                    <td>Kernel</td>
+                    <td>Linux 5.11.0</td>
+                </tr>
+                <tr>
+                    <td>Version</td>
+                    <td>#36~20.04.1-Ubuntu SMP Fri</td>
+                </tr>
+            </table>
+        </div>
+        <button class="collapsible_button">Current Session</button>
+        <div class="collapse_data">
+            <table>
+                <tr>
+                    <td>Kernel</td>
+                    <td>Linux 5.11.0</td>
+                </tr>
+                <tr>
+                    <td>Version</td>
+                    <td>#36~20.04.1-Ubuntu SMP Fri</td>
+                </tr>
+            </table>
+        </div>
+        <button class="collapsible_button">Misc</button>
+        <div class="collapse_data">
+            <table>
+                <tr>
+                    <td>Kernel</td>
+                    <td>Linux 5.11.0</td>
+                </tr>
+                <tr>
+                    <td>Version</td>
+                    <td>#36~20.04.1-Ubuntu SMP Fri</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    var coll = document.getElementsByClassName("collapsible_button");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+</html>
