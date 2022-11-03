@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { execSync } = require("child_process"); // required module to run shell script
+//const { isStringObject } = require('util/types');
 var condition = true;
 var count =0;
 function breakLoop(){
@@ -14,17 +15,7 @@ function breakLoop(){
         } 
     });
 }
-function convertJson(){
-
-}
 function fetchData(){
-    // while(count < 100000){
-    //     setTimeout(function() {
-    //         info();
-            
-    //      },500*count*10);
-    //     count+= 0.1;
-    // }
     fetch("../../txt/memInfo.json")
      .then(function(res){
          return res.json();
@@ -36,7 +27,7 @@ function fetchData(){
              out += `
              <tr>
              <td width="30%">${cpuDetail.field}</td>
-             <td witdh="70%">${cpuDetail.data}</td>
+             <td witdh="70%">${cpuDetail.data} kB</td>
              </tr>
              `
          }
@@ -64,4 +55,16 @@ function info() {
         }
     );
 }
-fetchData();
+// function sleep(ms) {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
+// async function demo() {
+//   var i = 0;
+//   while (true) {
+//     i++;
+//     await info();
+//     await sleep(1000);
+//     }
+// }
+info();
