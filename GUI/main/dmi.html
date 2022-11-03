@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../../js/loadDMI.js"></script>
 </head>
 <style>
     * {
@@ -37,45 +38,34 @@
   color: white;
 }
 </style>
-<body>
+<body onload="fetchData()">
     <div class="os_container">
-        <button class="collapsible_button">Version</button>
+        <button class="collapsible_button">Product</button>
         <div class="collapse_data">
             <table>
-                <tr>
-                    <td>Kernel</td>
-                    <td>Linux 5.11.0</td>
-                </tr>
-                <tr>
-                    <td>Version</td>
-                    <td>#36~20.04.1-Ubuntu SMP Fri</td>
-                </tr>
+                <tbody id="table_dmi_product">
+                </tbody>
             </table>
         </div>
-        <button class="collapsible_button">Current Session</button>
+        <button class="collapsible_button">BIOS</button>
         <div class="collapse_data">
             <table>
-                <tr>
-                    <td>Kernel</td>
-                    <td>Linux 5.11.0</td>
-                </tr>
-                <tr>
-                    <td>Version</td>
-                    <td>#36~20.04.1-Ubuntu SMP Fri</td>
-                </tr>
+                <tbody id="tableBios">
+                </tbody>
             </table>
         </div>
-        <button class="collapsible_button">Misc</button>
+        <button class="collapsible_button">Board</button>
         <div class="collapse_data">
             <table>
-                <tr>
-                    <td>Kernel</td>
-                    <td>Linux 5.11.0</td>
-                </tr>
-                <tr>
-                    <td>Version</td>
-                    <td>#36~20.04.1-Ubuntu SMP Fri</td>
-                </tr>
+                <tbody id="table_dmi_board">
+                </tbody>
+            </table>
+        </div>
+        <button class="collapsible_button">Chassis</button>
+        <div class="collapse_data">
+            <table>
+                <tbody id="table_dmi_chassis">
+                </tbody>
             </table>
         </div>
     </div>

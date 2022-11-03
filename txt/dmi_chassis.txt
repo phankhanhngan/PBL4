@@ -1,0 +1,24 @@
+# dmidecode 3.2
+Getting SMBIOS data from sysfs.
+SMBIOS 3.2.1 present.
+# SMBIOS implementations newer than version 3.2.0 are not
+# fully supported by this version of dmidecode.
+
+Handle 0x0003, DMI type 3, 22 bytes
+Chassis Information
+	Manufacturer: ASUSTeK COMPUTER INC.
+	Type: Notebook
+	Lock: Not Present
+	Version: 1.0       
+	Serial Number: L5NRCV02Y298226
+	Asset Tag: No Asset Tag
+	Boot-up State: Safe
+	Power Supply State: Safe
+	Thermal State: Safe
+	Security Status: None
+	OEM Information: 0x00000000
+	Height: Unspecified
+	Number Of Power Cords: 1
+	Contained Elements: 0
+	SKU Number: NA
+
