@@ -6,10 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./stylesheets/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./stylesheets/scrollbar.css">
     <title>Document</title>
     <style>
         * {
-            margin: 0;
+           margin: 0;
+        }
+        a{
+            display:inline-block;
+            vertical-align: middle;
+        }
+        span{
+            vertical-align: middle;
+        }
+        img {
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -17,25 +28,52 @@
     <div class="nav_container">
         <ul class="nav">
             <li>
-               <p class="nav_fields">Computer</p>
+                <img src="./icon/icons8-workstation-64.png" alt="" height="30px" width="30px"><span class="nav_fields">Computer</span>
                <ul class="sub_nav">
                 <li>
-                    <a target="main" href="./main/CPU.html" class="nav_opts">CPU</a>
+                    <a target="main" href="./main/summary.html" class="nav_opts"><img src="./icon/icons8-information-64.png" alt="" height="30px" width="30px"><span>&nbsp;Summary</span></a>
+                 </li>
+                <li>
+                   <a target="main" href="./main/CPU.html" class="nav_opts"><img src="./icon/icons8-processor-64.png" alt="" height="30px" width="30px"><span>&nbsp;Cpu</span></a>
                 </li>
                 <li>
-                    <a target="main" href="./main/dmi.html" class="nav_opts">DMI</a>
+                    <a target="main" href="./main/cpuPerformance.html" class="nav_opts"><img src="./icon/icons8-performance-64.png" alt="" height="30px" width="30px"><span>&nbsp;Cpu Performance</span></a>
                 </li>
                 <li>
-                    <a target="main" href="./main/kernel.html" class="nav_opts">Kernel modules</a>
+                    <a target="main" href="./main/kernel.html" class="nav_opts"><img src="./icon/icons8-linux-64.png" alt="" height="30px" width="30px"><span>&nbsp;Kernel Modules</span></a>
+                </li>
+                <li>
+                    <a target="main" href="./main/filesystems.html" class="nav_opts"><img src="./icon/icons8-hdd-80.png" alt="" height="30px" width="30px"><span>&nbsp;Filesystems</span></a>
+                </li>
+                <li>
+                    <a target="main" href="./main/display.html" class="nav_opts"><img src="./icon/icons8-monitor-40.png" alt="" height="30px" width="30px"><span>&nbsp;Display</span></a>
+                </li>
+                <li>
+                    <a target="main" href="./main/user.html" class="nav_opts"><img src="./icon/icons8-people-80.png" alt="" height="30px" width="30px"><span>&nbsp;Users</span></a>
                 </li>
                </ul>
             </li>
             <li>
-                <a href="./main/memory.html" target="main" class="nav_opts">Memory</a>
+                <img src="./icon/icons8-device-60.png" alt="" height="30px" width="30px"><span class="nav_fields">Devices</span>
+                <ul class="sub_nav">
+                    <li>
+                        <a target="main" href="./main/processor.html" class="nav_opts"><img src="./icon/icons8-electronics-64.png" alt="" height="30px" width="30px"><span>&nbsp;Processor</span></a>
+                    </li>
+                    <li>
+                        <a href="./main/memory.html" target="main" class="nav_opts"><img src="./icon/icons8-memory-slot-64.png" alt="" height="30px" width="30px"><span>&nbsp;Memory</span></a>
+                    </li>
+                    <li>
+                        <a href="./main/battery.html" target="main" class="nav_opts"><img src="./icon/icons8-empty-battery-64.png" alt="" height="30px" width="30px"><span>&nbsp;Battery</span></a>
+                    </li>
+                    <li>
+                        <a href="./main/pci.html" target="main" class="nav_opts"><img src="./icon/icons8-pci-card-55.png" alt="" height="30px" width="30px"><span>&nbsp;PCIs</span></a>
+                    </li>
+                    <li>
+                        <a target="main" href="./main/dmi.html" class="nav_opts"><img src="./icon/icons8-workstation-64.png" alt="" height="30px" width="30px"><span>&nbsp;DMI</span></a>
+                    </li>
+                </ul>
             </li>
-            <li>
-                <a href="./main/battery.html" target="main" class="nav_opts">Battery</a>
-            </li>
+            
         </ul>
     </div>
 </body>

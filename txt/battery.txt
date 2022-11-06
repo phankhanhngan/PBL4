@@ -2,7 +2,7 @@
   vendor:               ASUSTeK
   model:                ASUS Battery
   power supply:         yes
-  updated:              Thứ năm, 03 Tháng 11 Năm 2022 22:58:30 +07 (82 seconds ago)
+  updated:              Thứ bảy, 05 Tháng 11 Năm 2022 17:51:08 +07 (113 seconds ago)
   has history:          yes
   has statistics:       yes
   battery
@@ -10,18 +10,14 @@
     rechargeable:        yes
     state:               fully-charged
     warning-level:       none
-    energy:              41,021 Wh
+    energy:              40,833 Wh
     energy-empty:        0 Wh
-    energy-full:         41,021 Wh
+    energy-full:         40,833 Wh
     energy-full-design:  50,527 Wh
     energy-rate:         0 W
     voltage:             12,476 V
     percentage:          100%
-    capacity:            81,1863%
+    capacity:            80,8142%
     technology:          lithium-ion
     icon-name:          'battery-full-charged-symbolic'
-  History (charge):
-    1667508391	0,000	unknown
-  History (rate):
-    1667508391	0,000	unknown
 

@@ -20,8 +20,8 @@
 }
 
 .nav_fields {
-    display: block;
-    width: 135px;
+    /* display: block; */
+    width: 250px;
     height: 20px;
     text-decoration: none;
     color: rgb(138, 138, 138);
@@ -36,7 +36,7 @@
 
 .nav_opts {
     display: block;
-    width: 135px;
+    width: 250px;
     height: 20px;
     text-decoration: none;
     color: rgb(138, 138, 138);
