@@ -6,35 +6,19 @@ var count =0;
 function breakLoop(){
     condition = false;
 }
- // const fs = require("fs");
- function  listMemoryInfos() {
-    // run command to get all row in lscpu to json file and overwrite it to folder txt\ and return that json file
-    execSync('cat /proc/meminfo| grep "Mem"  > ../txt/memInfo.txt', (err) => {
-        if (err) {
-            console.log(err);
-        } 
-    });
-}
-function fetchData(){
-    fetch("../../txt/memInfo.json")
-     .then(function(res){
-         return res.json();
-     })
-     .then(function(data){
-         let table = document.querySelector("#memInfoTable");
-         let out = "";
-         for(let cpuDetail of data.memory){
-             out += `
-             <tr>
-             <td width="30%">${cpuDetail.field}</td>
-             <td witdh="70%">${cpuDetail.data} kB</td>
-             </tr>
-             `
-         }
-         table.innerHTML=out;
-     });
-}
-function info() {
+//  // const fs = require("fs");
+//  function  listMemoryInfos() {
+//     // run command to get all row in lscpu to json file and overwrite it to folder txt\ and return that json file
+//     execSync('cat /proc/meminfo| grep "Mem"  > ./txt/memInfo.txt', (err) => {
+//         if (err) {
+//             console.log(err);
+//         } 
+//     });
+// }
+setInterval(function() {
+    fetchDataMemory();
+}, 1000);
+function fetchDataMemory() {
     var info = {};
     info.memory = [];
     // info empty to json
@@ -50,21 +34,17 @@ function info() {
         }
         info.memory.push(obj);
     });
-    fs.writeFile ("../txt/memInfo.json", JSON.stringify(info), function(err) {
-        if (err) throw err;
-        }
-    );
+    let table = document.querySelector("#memInfoTable");
+    table.innerHTML="";
+    let out = "";
+    for(let memDetail of info.memory){
+        out += `
+            <tr>
+             <td width="30%" >${memDetail.field}</td>
+             <td witdh="70%" >${memDetail.data} kB</td>
+             </tr>
+             `
+         }
+         console.log(out);
+    table.innerHTML=out;
 }
-// function sleep(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-// }
-
-// async function demo() {
-//   var i = 0;
-//   while (true) {
-//     i++;
-//     await info();
-//     await sleep(1000);
-//     }
-// }
-info();
