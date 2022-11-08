@@ -26,6 +26,35 @@ html,
             margin: 10px 10px 10px 10px;
             padding: 8px 8px 8px 8px;
         }
+        .container_div_70 {
+            height: 70%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_60 {
+            height: 60%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_40 {
+            height: 40%;
+            width: auto;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_90 {
+            height: 90%;
+            width: 100%;
+        }
+        .container_div_30 {
+            height: 30%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
 
         .my-custom-scrollbar {
             position: relative;
@@ -35,7 +64,10 @@ html,
         .table-wrapper-scroll-y {
             display: block;
         }
-
+        th,p{
+            color: rgba(0,156,73,255);
+            font-size: 16px;
+        }
         tr,
         span {
             color: #ffffff;
@@ -45,8 +77,6 @@ html,
         td {
             padding: 5px 8px;
         }
-
-        tr:hover th,
         tr:hover td {
             background-color: #fc7c32;
             color: #ffffff;

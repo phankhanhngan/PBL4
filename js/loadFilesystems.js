@@ -36,12 +36,12 @@ function fetchDataFileSystem() {
             out += `
             <tr>
             <td width="50%">
-                <div class="progress">
+                <div class="progress" style="height: 25px;">
                     <div class="progress-bar progress-bar-galaxy" role="progressbar" aria-valuenow="${filesystemDetail.usage}"
                     aria-valuemin="0" aria-valuemax="100" style="width:${filesystemDetail.usage}%">
                         ${filesystemDetail.usage}% (${filesystemDetail.used} of ${filesystemDetail.size})
                     </div>
-                </div>
+            </div>
             </td>
             <td>${filesystemDetail.device}</td>
             <td width="25%">${filesystemDetail.mountpoint}</td>

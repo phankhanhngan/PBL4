@@ -27,7 +27,7 @@ function txtFileToJson() {
     data = data.split(/\n/g);
     let totalCore = (data.length - 1) / 7;
     for (let i = 0; i < totalCore; i++) {
-        let index = i > 0 ? i * totalCore - i : i * totalCore;
+        let index = i > 0 ? i * 8 - i : i * totalCore;
         let obj = {
             processor: data[index].split(":")[1].trim(),
             vendor_id: data[index + 1].split(":")[1].trim(),
