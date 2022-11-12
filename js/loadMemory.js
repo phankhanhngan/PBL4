@@ -1,10 +1,12 @@
 const fs = require('fs');
 const { execSync } = require("child_process"); // required module to run shell script
+
 function fetchDataMemory() {
     let result = 0;
     let table = document.querySelector("#memInfoTable");
     table.innerHTML = "";
     let out = "";
+
     var data = fs.readFileSync('/proc/meminfo').toString();
     data.split(/\n/g).forEach(function (line) {
         line = line.split(':');
@@ -29,6 +31,7 @@ function fetchDataMemory() {
     table.innerHTML = out;
     return result;
 }
+
 window.onload = function () {
     fetchDataMemory();
     var dps = []; // dataPoints
@@ -92,3 +95,4 @@ window.onload = function () {
     }, 300);
 
 }
+

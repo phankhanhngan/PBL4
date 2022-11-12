@@ -3,6 +3,7 @@
   model:                ASUS Battery
   power supply:         yes
   updated:              Thứ hai, 07 Tháng 11 Năm 2022 22:01:33 +07 (13 seconds ago)
+
   has history:          yes
   has statistics:       yes
   battery
@@ -13,6 +14,7 @@
     energy:              40,422 Wh
     energy-empty:        0 Wh
     energy-full:         40,422 Wh
+
     energy-full-design:  50,527 Wh
     energy-rate:         0 W
     voltage:             12,476 V
@@ -24,4 +26,5 @@
     1667851653	0,000	unknown
   History (rate):
     1667851653	0,000	unknown
+
 
