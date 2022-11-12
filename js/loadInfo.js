@@ -11,7 +11,7 @@ const { execSync } = require("child_process"); // required module to run shell s
  // const fs = require("fs");
 function  listCpuInfos() {
      // run command to get all row in lscpu to json file and overwrite it to folder txt\ and return that json file
-     execSync("lscpu -J > ./txt/cpuInfo.json", (err) => {
+     let data =execSync("lscpu -J > ./txt/cpuInfo.json", (err) => {
          if (err) {
              console.log(err);
          } 

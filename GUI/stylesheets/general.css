@@ -1,0 +1,91 @@
+html,
+        body {
+            margin: 0px;
+            height: 100%;
+            background-color: rgb(77, 76, 76);
+            overflow: hidden;
+            font-size: 15px; 
+            font-weight: 600;
+        }
+
+        .container_div_50 {
+            height: 50%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_100 {
+            height: 100%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_25 {
+            height: 25%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_70 {
+            height: 70%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_60 {
+            height: 60%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_40 {
+            height: 40%;
+            width: auto;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+        .container_div_90 {
+            height: 90%;
+            width: 100%;
+        }
+        .container_div_30 {
+            height: 30%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
+
+        .my-custom-scrollbar {
+            position: relative;
+            overflow: auto;
+        }
+
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+        th,p{
+            color: rgba(0,156,73,255);
+            font-size: 16px;
+        }
+        tr,
+        span {
+            color: #ffffff;
+        }
+
+        th,
+        td {
+            padding: 5px 8px;
+        }
+        tr:hover td {
+            background-color: #fc7c32;
+            color: #ffffff;
+        }
+
+        tr:hover th {
+            border-radius: 6px 0 0 6px;
+        }
+
+        tr:hover td:last-child {
+            border-radius: 0 6px 6px 0;
+        }
