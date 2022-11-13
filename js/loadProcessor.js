@@ -94,4 +94,3 @@ function loadProcessorDetails(index) {
     table.innerHTML = out;
 }
 
-

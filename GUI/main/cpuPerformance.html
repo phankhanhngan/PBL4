@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../js/loadCpuPerformance.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../stylesheets/scrollbar.css">
+        <link rel="stylesheet" href="../stylesheets/general.css">
+        <style type="text/css">
+            .context-menu {
+                position: absolute;
+                text-align: center;
+                background: lightgray;
+                border: 1px solid black;
+            }
+      
+            .context-menu ul {
+                padding: 0px;
+                margin: 0px;
+                min-width: 150px;
+                list-style: none;
+            }
+      
+            .context-menu ul li {
+                padding-bottom: 7px;
+                padding-top: 7px;
+                border: 1px solid black;
+            }
+      
+            .context-menu ul li a {
+                text-decoration: none;
+                color: black;
+            }
+      
+            .context-menu ul li:hover {
+                background: darkgray;
+            }
+        </style>
+          
+    <script>
+        
+    </script>
+</head>
+
+<body onload="fetchCPUPerformance()">
+    <div class="container_div_100 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-borderless table-sm">
+        <thead>
+            <tr>
+                <th>PID</th>
+                <th>USER</th>
+                <th>%CPU</th>
+                <th>%MEM</th>
+                <th>COMMAND</th>
+            </tr>
+        </thead>
+        <tbody id="cpuPerformanceTable">
+        </tbody>
+
+    </table>
+    <div id="contextMenu" class="context-menu" 
+        style="display:none">
+        <ul>
+            <li><a id="killProcess">Kill</a></li>
+            <li><a id="stopProcess">Stop</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
+

@@ -59,7 +59,7 @@ window.onload = function () {
             suffix: " Kb"
         },
         data: [{
-            type: "area",
+            type: "splineArea",
             lineThickness: 3,
             dataPoints: dps,
             color: "#01822e",

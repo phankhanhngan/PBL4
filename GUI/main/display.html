@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../js/loadResources.js"></script>
-    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script> 
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../node_modules/canvasjs/dist/canvasjs.min.js"></script>
     <script src="../../node_modules/canvasjs/dist/jquery.canvasjs.min.js"></script>
     <script src="../../node_modules/canvasjs/dist/jquery.canvasjs.js"></script>
@@ -14,12 +14,220 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../stylesheets/scrollbar.css">
     <link rel="stylesheet" href="../stylesheets/general.css">
+    <style>
+        .test {
+            display: flex;
+        }
+        .p1{
+            background-color: red;
+            border-radius: 6px;
+            width: 40px;
+            height: 20px;
+            border-radius: 6px;
+            box-shadow: inset 1px 1px 1px rgb(255, 238, 205);
+            
+            /* display: flex; */
+        }
+        .p2{
+            background-color: blue;
+            border-radius: 6px;
+            width: 40px;
+            height: 20px;
+            border-radius: 6px;
+            box-shadow: inset 1px 1px 1px rgb(255, 238, 205);
+
+        }
+        .p3{
+            background-color: fuchsia;
+            border-radius: 6px;
+            width: 40px;
+            height: 20px;
+            border-radius: 6px;
+            box-shadow: inset 1px 1px 1px rgb(255, 238, 205);
+
+        }
+        .p4{
+            background-color: green;
+            border-radius: 6px;
+            width: 40px;
+            height: 20px;
+            border-radius: 6px;
+            box-shadow: inset 1px 1px 1px rgb(255, 238, 205);
+
+        }
+        .p5{
+            background-color: lime;
+            border-radius: 6px;
+            width: 40px;
+            height: 20px;
+            border-radius: 6px;
+            box-shadow: inset 1px 1px 1px rgb(255, 238, 205);
+
+        }
+        .p6{
+            background-color: yellow;
+            border-radius: 6px;
+            width: 40px;
+            height: 20px;
+            box-shadow: inset 1px 1px 1px rgb(255, 238, 205);
+            border-radius: 6px;
+        }
+        .p7{
+            background-color: navy;
+            border-radius: 6px;
+            width: 40px;
+            box-shadow: inset 1px 1px 1px rgb(255, 238, 205);
+            height: 20px;
+            border-radius: 6px;
+        }
+        .p8{
+            background-color: aqua;
+            border-radius: 6px;
+            width: 40px;
+            height: 20px;
+            box-shadow: inset 1px 1px 1px rgb(255, 238, 205);
+            border-radius: 6px;
+        }
+        span{
+            font-weight: 200;
+        }
+    </style>
 </head>
 
 <body>
-    <span>CPU History</span>
-    <div class="container_div_50 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar" style="width: auto;">
-        <div class="container_div_90" id="chartContainer"></div>
+    <div class="container_div_48 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar"
+        style="width: auto;">
+        <span>CPU Usage History</span>
+        <div class="container_div_80" id="chartContainer"></div>
+        <div class="m-3">
+            <div class="row row-cols-4 w-auto m-3">
+                <div class="test col-sm-3">
+                    <div class="p1"></div>
+                    &nbsp;
+                    <span>CPU1:</span>
+                    &nbsp;
+                    <span id ="cpu1">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p2"></div>
+                    &nbsp;
+                    <span>CPU2:</span>
+                    &nbsp;
+                    <span id ="cpu2">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p3"></div>
+                    &nbsp;
+                    <span>CPU3:</span>
+                    &nbsp;
+                    <span id ="cpu3">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p4"></div>
+                    &nbsp;
+                    <span>CPU4:</span>
+                    &nbsp;
+                    <span id ="cpu4">15%</span>
+                </div>
+            </div>
+            <div class="row row-cols-4 w-auto m-3">
+                <div class="test col-sm-3">
+                    <div class="p5"></div>
+                    &nbsp;
+                    <span>CPU5:</span>
+                    &nbsp;
+                    <span id ="cpu5">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p6"></div>
+                    &nbsp;
+                    <span>CPU6:</span>
+                    &nbsp;
+                    <span id ="cpu6">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p7"></div>
+                    &nbsp;
+                    <span>CPU7:</span>
+                    &nbsp;
+                    <span id ="cpu7">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p8"></div>
+                    &nbsp;
+                    <span>CPU8:</span>
+                    &nbsp;
+                    <span id ="cpu8">15%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container_div_48 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar"
+        style="width: auto;">
+        <span>CPU Frequency History</span>
+        <div class="container_div_80" id="chartContainerFrequency"></div>
+        <div class="m-3">
+            <div class="row row-cols-4 w-auto m-3">
+                <div class="test col-sm-3">
+                    <div class="p1"></div>
+                    &nbsp;
+                    <span>CPU1:</span>
+                    &nbsp;
+                    <span id ="cpuF1">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p2"></div>
+                    &nbsp;
+                    <span>CPU2:</span>
+                    &nbsp;
+                    <span id ="cpuF2">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p3"></div>
+                    &nbsp;
+                    <span>CPU3:</span>
+                    &nbsp;
+                    <span id ="cpuF3">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p4"></div>
+                    &nbsp;
+                    <span>CPU4:</span>
+                    &nbsp;
+                    <span id ="cpuF4">15%</span>
+                </div>
+            </div>
+            <div class="row row-cols-4 w-auto m-3">
+                <div class="test col-sm-3">
+                    <div class="p5"></div>
+                    &nbsp;
+                    <span>CPU5:</span>
+                    &nbsp;
+                    <span id ="cpuF5">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p6"></div>
+                    &nbsp;
+                    <span>CPU6:</span>
+                    &nbsp;
+                    <span id ="cpuF6">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p7"></div>
+                    &nbsp;
+                    <span>CPU7:</span>
+                    &nbsp;
+                    <span id ="cpuF7">15%</span>
+                </div>
+                <div class="test col-sm-3">
+                    <div class="p8"></div>
+                    &nbsp;
+                    <span>CPU8:</span>
+                    &nbsp;
+                    <span id ="cpuF8">15%</span>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script>
