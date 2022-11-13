@@ -21,4 +21,3 @@
     capacity:            79,605%
     technology:          lithium-ion
     icon-name:          'battery-full-symbolic'
-

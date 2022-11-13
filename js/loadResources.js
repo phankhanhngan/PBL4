@@ -32,6 +32,7 @@ function getListCpuFrequency() {
     });
     return info;
 }
+
 window.onload = function () {
     var dataPoints1 = [];
     var dataPoints2 = [];
@@ -89,7 +90,6 @@ window.onload = function () {
             markerSize: 0,
             name: "Cpu2",
             type: "spline",
-            lineThickness: 2,
             dataPoints: dataPoints2,
             color: "blue",
         },
