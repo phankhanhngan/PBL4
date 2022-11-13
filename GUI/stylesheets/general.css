@@ -14,6 +14,12 @@ html,
             margin: 10px 10px 10px 10px;
             padding: 8px 8px 8px 8px;
         }
+        .container_div_48 {
+            height: 48%;
+            background-color: rgb(58, 58, 58);
+            margin: 10px 10px 10px 10px;
+            padding: 8px 8px 8px 8px;
+        }
         .container_div_100 {
             height: 100%;
             background-color: rgb(58, 58, 58);
@@ -47,6 +53,22 @@ html,
         }
         .container_div_90 {
             height: 90%;
+            width: 100%;
+        }
+        .container_div_80 {
+            height: 80%;
+            width: 100%;
+        }
+        .container_div_85 {
+            height: 85%;
+            width: 100%;
+        }
+        .container_div_70_2 {
+            height: 70%;
+            width: auto;
+        }
+        .container_div_20 {
+            height: 80%;
             width: 100%;
         }
         .container_div_30 {

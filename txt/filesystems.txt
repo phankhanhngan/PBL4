@@ -1,8 +1,8 @@
 Filesystem     Type   Size  Used Avail Use% Mounted on
-tmpfs          tmpfs  781M  2,3M  779M   1% /run
+tmpfs          tmpfs  781M  2,1M  779M   1% /run
 /dev/nvme0n1p6 ext4    48G   18G   28G  40% /
-tmpfs          tmpfs  3,9G  111M  3,8G   3% /dev/shm
+tmpfs          tmpfs  3,9G   38M  3,8G   1% /dev/shm
 tmpfs          tmpfs  5,0M  4,0K  5,0M   1% /run/lock
 tmpfs          tmpfs  4,0M     0  4,0M   0% /sys/fs/cgroup
 /dev/nvme0n1p1 vfat   256M   34M  223M  13% /boot/efi
-tmpfs          tmpfs  781M  156K  781M   1% /run/user/1000
+tmpfs          tmpfs  781M  112K  781M   1% /run/user/1000

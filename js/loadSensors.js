@@ -89,7 +89,7 @@ window.onload = function () {
             labelFontColor: "#01822e"
         },
         data: [{
-            type: "area",
+            type: "splineArea",
             lineThickness: 3,
             dataPoints: dps,
             color: "#01822e",
