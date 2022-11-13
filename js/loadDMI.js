@@ -2,32 +2,42 @@ const fs = require('fs');
 const { execSync } = require("child_process"); // required module to run shell script
 function  commandToTxtFile() {
     // run command to get all row in lscpu to json file and overwrite it to folder txt\ and return that json file
+
     execSync('sudo dmidecode -t bios  > ./txt/dmi_bios.txt', (err) => {
+
         if (err) {
             console.log(err);
         } 
     });
+
     execSync('sudo dmidecode -t system  > ./txt/dmi_system.txt', (err) => {
+
         if (err) {
             console.log(err);
         } 
     });
+
     execSync('sudo dmidecode -t baseboard  > ./txt/dmi_baseboard.txt', (err) => {
+
         if (err) {
             console.log(err);
         } 
     });
+
     execSync('sudo dmidecode -t chassis  > ./txt/dmi_chassis.txt', (err) => {
+
         if (err) {
             console.log(err);
         } 
     });
 }
 function infoBios() {
+
     commandToTxtFile();
     var dmi = {};
     dmi.bios = [];
     var data = fs.readFileSync('./txt/dmi_bios.txt').toString();
+
     data.split(/\n/g).forEach(function(line){
         line = line.split(':');
         if (line.length < 2) {
@@ -51,7 +61,9 @@ function infoSystem() {
     commandToTxtFile();
     var dmi = {};
     dmi.system = [];
+
     var data = fs.readFileSync('./txt/dmi_system.txt').toString();
+
     data.split(/\n/g).forEach(function(line){
         line = line.split(':');
         if (line.length < 2) {
@@ -75,7 +87,9 @@ function infoBaseboard() {
     commandToTxtFile();
     var dmi = {};
     dmi.board = [];
+
     var data = fs.readFileSync('./txt/dmi_baseboard.txt').toString();
+
     data.split(/\n/g).forEach(function(line){
         line = line.split(':');
         if (line.length < 2) {
@@ -106,7 +120,9 @@ function infoChassis() {
     commandToTxtFile();
     var dmi = {};
     dmi.chassis = [];
+
     var data = fs.readFileSync('./txt/dmi_chassis.txt').toString();
+
     data.split(/\n/g).forEach(function(line){
         line = line.split(':');
         if (line.length < 2) {
@@ -134,6 +150,7 @@ function infoChassis() {
 }
 function fetchData(){
     let tableBios = document.querySelector("#tableBios");
+
     let tableProduct = document.querySelector("#tableProducts");
     let tableBoard = document.querySelector("#tableBoard");
     let tableChassis = document.querySelector("#tableChassis");
@@ -141,16 +158,20 @@ function fetchData(){
     let board = infoBaseboard();
     let chassis = infoChassis();
     let system = infoSystem();
+
     let out = "";
     for (let x in bios){
             out += `
             <tr>
+
             <td width="50%">${bios[x].field}</td>
             <td witdh="50%">${bios[x].data}</td>
+
             </tr>
             `
     }
     tableBios.innerHTML = out;
+
     out = "";
     for (let x in system){
             out += `
