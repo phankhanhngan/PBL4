@@ -1,28 +1,44 @@
 # dmidecode 3.2
 Getting SMBIOS data from sysfs.
-SMBIOS 3.2.1 present.
-# SMBIOS implementations newer than version 3.2.0 are not
-# fully supported by this version of dmidecode.
+SMBIOS 3.1.1 present.
 
-Handle 0x0001, DMI type 1, 27 bytes
-System Information
-	Manufacturer: ASUSTeK COMPUTER INC.
-	Product Name: ROG Strix G531GT_G531GT
-	Version: 1.0       
-	Serial Number: L5NRCV02Y298226
-	UUID: e9fb8c70-0f0c-1d48-9148-58cdbc3d630e
-	Wake-up Type: Power Switch
-	SKU Number:  
-	Family: ROG Strix
-
-Handle 0x0007, DMI type 32, 20 bytes
+Handle 0x0015, DMI type 32, 11 bytes
 System Boot Information
 	Status: No errors detected
 
-Handle 0x002C, DMI type 12, 5 bytes
+Handle 0x0017, DMI type 12, 5 bytes
 System Configuration Options
-	Option 1: SMI:00B26C
-	Option 2: DSN:                                
-	Option 3: DSN:                                
-	Option 4: DSN:                                
+	Option 1: J6H1:1-X Boot with Default; J8H1:1-X BIOS RECOVERY
+
+Handle 0x0012, DMI type 1, 27 bytes
+System Information
+	Manufacturer: LENOVO
+	Product Name: 20SM
+	Version: Lenovo ThinkBook 15-IIL
+	Serial Number: LR0DHSFP
+	UUID: 2f8966b1-197b-03b8-dffe-b4a9fcb83994
+	Wake-up Type: Power Switch
+	SKU Number: LENOVO_MT_20SM_BU_idea_FM_Thinkbook 15-IIL
+	Family: Thinkbook 15-IIL
+
+Handle 0x0058, DMI type 15, 31 bytes
+System Event Log
+	Area Length: 3970 bytes
+	Header Start Offset: 0x0000
+	Header Length: 16 bytes
+	Data Start Offset: 0x0010
+	Access Method: General-purpose non-volatile data functions
+	Access Address: 0x00F0
+	Status: Valid, Full
+	Change Token: 0x000000F7
+	Header Format: Type 1
+	Supported Log Type Descriptors: 4
+	Descriptor 1: POST error
+	Data Format 1: POST results bitmap
+	Descriptor 2: PCI system error
+	Data Format 2: None
+	Descriptor 3: System reconfigured
+	Data Format 3: None
+	Descriptor 4: Log area reset/cleared
+	Data Format 4: None
 

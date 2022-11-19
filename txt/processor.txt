@@ -1,56 +1,56 @@
 processor	: 0
 vendor_id	: GenuineIntel
-model name	: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
-microcode	: 0xea
-cpu MHz		: 4000.055
-cache size	: 8192 KB
-bogomips	: 4800.00
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+bogomips	: 2380.80
 processor	: 1
 vendor_id	: GenuineIntel
-model name	: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
-microcode	: 0xea
-cpu MHz		: 4000.052
-cache size	: 8192 KB
-bogomips	: 4800.00
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+bogomips	: 2380.80
 processor	: 2
 vendor_id	: GenuineIntel
-model name	: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
-microcode	: 0xea
-cpu MHz		: 4000.020
-cache size	: 8192 KB
-bogomips	: 4800.00
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+bogomips	: 2380.80
 processor	: 3
 vendor_id	: GenuineIntel
-model name	: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
-microcode	: 0xea
-cpu MHz		: 4000.174
-cache size	: 8192 KB
-bogomips	: 4800.00
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+microcode	: 0xb2
+cpu MHz		: 1300.306
+cache size	: 6144 KB
+bogomips	: 2380.80
 processor	: 4
 vendor_id	: GenuineIntel
-model name	: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
-microcode	: 0xea
-cpu MHz		: 4000.005
-cache size	: 8192 KB
-bogomips	: 4800.00
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+bogomips	: 2380.80
 processor	: 5
 vendor_id	: GenuineIntel
-model name	: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
-microcode	: 0xea
-cpu MHz		: 4000.022
-cache size	: 8192 KB
-bogomips	: 4800.00
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+microcode	: 0xb2
+cpu MHz		: 1300.062
+cache size	: 6144 KB
+bogomips	: 2380.80
 processor	: 6
 vendor_id	: GenuineIntel
-model name	: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
-microcode	: 0xea
-cpu MHz		: 4000.078
-cache size	: 8192 KB
-bogomips	: 4800.00
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+bogomips	: 2380.80
 processor	: 7
 vendor_id	: GenuineIntel
-model name	: Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz
-microcode	: 0xea
-cpu MHz		: 4000.030
-cache size	: 8192 KB
-bogomips	: 4800.00
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+bogomips	: 2380.80

@@ -5,30 +5,38 @@ function fetchCPUPerformance() {
     let out = "";
     table.innerHTML = "";
 
-    let cpuPerformance = execSync(`top -b -n 1 -o %MEM| awk \'/^top -/{time = $3} $1+0>0 {printf "%-8s %-8s %-8s %-8s %-8s%%\\n", \ $1,$2,$9,$10,$12 }'`, (err) => {
+    let cpuPerformance = execSync(`top -b -n 1 -o %MEM| awk \'/^top -/{time = $3} $1+0>0 {printf "%-8s %-8s %-8s %-8s %-8s %-8s%%\\n", \ $1,$2,$8,$9,$10,$12 }'`, (err) => {
         if (err) {
             console.log(err);
         }
     }).toString().trim().split(/\n/g).forEach(function (line) {
         line = line.trim().split(/\s+/)
         out += `
-             <tr onmousedown="showContextMenu(event, ${line[0]})">
+             <tr id="${line[0]}" onmousedown="showContextMenu(event, ${line[0]})">
              <td width="10%">${line[0]}</td>
              <td width="20%">${line[1]}</td>
-             <td width="20%">${line[2]} %</td>
+             <td class="${line[2]}" width="20%">${line[2]}</td>
              <td width="20%">${line[3]} %</td>
-             <td width="30%">${line[4]}</td>
+             <td width="20%">${line[4]} %</td>
+             <td width="30%">${line[5]}</td>
              </tr>
              `
     });
     table.innerHTML = out;
+    var statusCol = document.querySelectorAll(".T");
+    statusCol.forEach(el => {
+        el.parentElement.style.backgroundColor = "#bdc00f";
+        el.style.color = "#fff";
+    });
 }
 
 setInterval(function () {
     fetchCPUPerformance();
-}, 3000);
+}, 5000);
 
 const showContextMenu = (e, pid) => {
+    document.getElementById(pid).style.backgroundColor = "#fc7c32";
+    console.log(document.getElementById(pid));
     if(e.which == "1") hideMenu();
     else if (e.which == "3") {
         e.preventDefault();
@@ -41,14 +49,19 @@ const showContextMenu = (e, pid) => {
             var menu = document
                 .getElementById("contextMenu")
             menu.style.display = 'block';
-            console.log(menu.style);
             menu.style.left = e.pageX + "px";
             menu.style.top = e.pageY + "px";
-
-            
+            var kill = document.getElementById("killProcess");
+            kill.setAttribute("onclick", `killProcess(${pid})`);
+            var stop = document.getElementById("stopProcess");
+            stop.setAttribute("onclick", `stopProcess(${pid})`);
+            var resume = document.getElementById("resumeProcess");
+            resume.setAttribute("onclick", `resumeProcess(${pid})`);
         }
     }
 }
+
+
 
 function hideMenu() {
     document.getElementById(
@@ -61,13 +74,25 @@ function killProcess(pid) {
             console.log(err);
         }
     });
-    // hideMenu();
-    
+    hideMenu();
 }
 
-function stopProcess() {
-
+function stopProcess(pid) {
+    execSync(`kill -STOP ${pid}`, (err) => {
+        if (err) {
+            console.log(err);
+        }
+    });
+    hideMenu();
+    document.getElementById(pid).style.backgroundColor = "#bdc00f";
 }
-document.getElementById("killProcess").addEventListener("onclick", function(){
-    alert("aaa");
-});
+
+function resumeProcess(pid) {
+    execSync(`kill -CONT ${pid}`, (err) => {
+        if (err) {
+            console.log(err);
+        }
+    });
+    hideMenu();
+    document.getElementById(pid).style.backgroundColor = "none";
+}
