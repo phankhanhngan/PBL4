@@ -1,0 +1,9 @@
+.progress-bar-galaxy {
+    background-color: rgb(131, 0, 131) !important;
+    /* color: rgb(255, 255, 255); */
+    font-weight: 600;
+    font-size: 15px;
+}
+.progress{
+    background-color: rgb(77, 76, 76);
+}

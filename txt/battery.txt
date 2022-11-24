@@ -3,29 +3,28 @@
   model:                L19M3PF9
   serial:               8212
   power supply:         yes
-  updated:              Thứ bảy, 19 Tháng 11 Năm 2022 09:49:04 +07 (89 seconds ago)
+  updated:              Thứ năm, 24 Tháng 11 Năm 2022 23:41:39 +07 (6 seconds ago)
   has history:          yes
   has statistics:       yes
   battery
     present:             yes
     rechargeable:        yes
-    state:               discharging
+    state:               charging
     warning-level:       none
-    energy:              20,48 Wh
+    energy:              36,91 Wh
     energy-empty:        0 Wh
-    energy-full:         37,57 Wh
+    energy-full:         37,31 Wh
     energy-full-design:  45 Wh
-    energy-rate:         13,428 W
-    voltage:             11,2 V
-    time to empty:       1,5 hours
-    percentage:          54%
-    capacity:            83,4889%
+    energy-rate:         5,279 W
+    voltage:             12,876 V
+    time to full:        4,5 minutes
+    percentage:          98%
+    capacity:            82,9111%
     technology:          lithium-polymer
-    icon-name:          'battery-good-symbolic'
+    icon-name:          'battery-full-charging-symbolic'
   History (charge):
-    1668826144	54,000	discharging
-    1668850544	0,000	unknown
+    1669325722	0,000	unknown
   History (rate):
-    1668826144	13,428	discharging
-    1668850544	0,000	unknown
+    1669308099	5,279	charging
+    1669325722	0,000	unknown
 

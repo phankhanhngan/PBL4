@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../../js/loadSummary.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" -->
+        <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="../stylesheets/scrollbar.css">
     <link rel="stylesheet" href="../stylesheets/general.css">
     <style>
         .collapsible_button {
-            background-color: rgb(58, 58, 58);
             color: white;
             cursor: pointer;
             border: none;
@@ -22,6 +21,7 @@
             text-align: left;
             outline: none;
             font-weight: bold;
+            background-color: transparent;
         }
         .collapse_data {
             padding: 0 25px;
@@ -34,31 +34,41 @@
 </head>
 
 <body onload="fetchData()">
-    <div class="container_div_100 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar">
-        <button class="collapsible_button">Computer</button>
+    <div class="container_div_100 table-wrapper-scroll-y my-custom-scrollbar">
+        <button class="collapsible_button extraInfo">
+            <i class="fa-solid fa-caret-down"></i>
+            COMPUTER
+        </button>
         <div class="collapse_data">
-            <table class="table table-borderless table-sm">
+            <table class="table-custom">
                 <tbody id="tableComputer">
                 </tbody>
             </table>
         </div>
-        <button class="collapsible_button">Display</button>
+        <button class="collapsible_button extraInfo">
+            <i class="fa-solid fa-caret-down"></i>
+            DISPLAY
+        </button>
         <div class="collapse_data">
-            <table class="table table-borderless table-sm">
+            <table class="table-custom">
                 <tbody id="tableDisplay">
                 </tbody>
             </table>
         </div>
-        <button class="collapsible_button">Audio Devices</button>
+        <button class="collapsible_button extraInfo">
+            <i class="fa-solid fa-caret-down"></i>
+            AUDIO DEVICES</button>
         <div class="collapse_data">
-            <table class="table table-borderless table-sm">
+            <table class="table-custom">
                 <tbody id="tableAudioDevices">
                 </tbody>
             </table>
         </div>
-        <button class="collapsible_button">Input Devices</button>
+        <button class="collapsible_button extraInfo">
+            <i class="fa-solid fa-caret-down"></i>
+            INPUT DEVICES</button>
         <div class="collapse_data">
-            <table class="table table-borderless table-sm">
+            <table class="table-custom">
                 <tbody id="tableInputDevice">
                 </tbody>
             </table>
@@ -66,18 +76,19 @@
     </div>
 </body>
 <script>
-    // window.$ = window.jQuery = require("../../node_modules/jquery/dist/jquery.min.js");
     var coll = document.getElementsByClassName("collapsible_button");
     var i;
 
     for (i = 0; i < coll.length; i++) {
+
         coll[i].addEventListener("click", function () {
             this.classList.toggle("active");
             var content = this.nextElementSibling;
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
             } else {
-                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.maxHeight = content.scrollHeight + 80 + "px";
+                content.style.minHeight = content.scrollHeight + 12 + "px";
             }
         });
     }

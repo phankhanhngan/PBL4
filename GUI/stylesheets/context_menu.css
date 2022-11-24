@@ -1,0 +1,32 @@
+.context-menu {
+    position: absolute;
+    text-align: center;
+    background: #fc7c3291;
+    border-radius: 3px;
+}
+
+.context-menu ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 80px;
+    list-style: none;
+    color: rgb(255, 255, 255);
+}
+
+.context-menu ul li {
+    padding-bottom: 7px;
+    padding-top: 7px;
+    color: rgb(255, 255, 255);
+}
+
+.context-menu ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.context-menu ul li:hover {
+    background: rgb(70, 70, 70);
+}

@@ -40,18 +40,18 @@ function fetchDataInputDevice() {
     let url = "";
     for (let [index,input] of listInputDevice().inputDevices.entries()) {
         if(input.type == "Keyboard"){
-            url = "/home/brooklyn/PBL4/PBL4/GUI/icon/icons8-keyboard-80.png";
+            icon = '<i class="fa-solid fa-keyboard"></i>';
         }
         else if (input.type == "Mouse"){
-            url = "/home/brooklyn/PBL4/PBL4/GUI/icon/icons8-mouse-80.png";
+            icon = '<i class="fa-solid fa-mouse"></i>'; 
         }
         else {
-            url = "/home/brooklyn/PBL4/PBL4/GUI/icon/question-mark.png";
+            icon = '<i class="fa-solid fa-question"></i>';
         }
         out +=
             `
         <tr onclick="loadInputDeviceDetails(${index})">
-        <td ><img src="${url}">&nbsp; ${input.name}</td>
+        <td >${icon} &nbsp; <span>${input.name}</span></td>
         </tr>
         `;
     }
