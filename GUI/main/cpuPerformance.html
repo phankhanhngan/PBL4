@@ -14,16 +14,17 @@
         <link rel="stylesheet" href="../stylesheets/context_menu.css">
 </head>
 
-<body onload="fetchCPUPerformance()">
-    <div class="container_div_100 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar">
+<body onclick="hideMenu()" onload="fetchCPUPerformance()">
+
+    <div class="container_div_60 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar">
         <table class="table table-borderless table-custom">
         <thead>
             <tr>
-                <th>PID</th>
-                <th>USER</th>
-                <th>STATUS</th>
-                <th>%CPU</th>
-                <th>%MEM</th>
+                <th id="pidth">PID</th>
+                <th id="user">USER</th>
+                <th id="status"> STATUS</th>
+                <th id="cputh">%CPU</th>
+                <th id="mem">%MEM</th>
                 <th>COMMAND</th>
                 
             </tr>
@@ -32,6 +33,9 @@
         </tbody>
 
     </table>
+
+    </div>
+    
     <div id="contextMenu" class="context-menu" 
         style="display:none">
         <ul>
@@ -39,6 +43,14 @@
             <li><a id="stopProcess">Suspend</a></li>
             <li><a id="resumeProcess">Resume</a></li>
         </ul>
+    </div>
+    
+    <div class="container_div_40 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar">
+        <span class="title">TOP COMMAND Infomation</span>
+        <table class="table table-borderless table-custom">
+            <tbody id="cpuPerformanceHead">
+            </tbody>
+        </table>
     </div>
 </body>
 

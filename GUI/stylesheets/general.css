@@ -117,12 +117,17 @@ tr,
 span {
     line-height: 30px;
     color: #ffffff;
+    font-weight: 400;
 }
 
 th,
 td {
     font-size: 14px;
     padding: 0px 12px;
+}
+
+td:first-child {
+    font-weight: 600;
 }
 
 tr:hover td {

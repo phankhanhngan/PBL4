@@ -52,7 +52,7 @@ window.onload = function () {
     var dataPoints8F = [];
     var chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
-        backgroundColor: "#4D4C4D",
+        backgroundColor: "transparent",
         axisX: {
             gridThickness: 0,
             tickLength: 0,
@@ -151,7 +151,7 @@ window.onload = function () {
     });
     var chart2 = new CanvasJS.Chart("chartContainerFrequency", {
         animationEnabled: true,
-        backgroundColor: "#4D4C4D",
+        backgroundColor: "transparent",
         axisX: {
             gridThickness: 0,
             tickLength: 0,
