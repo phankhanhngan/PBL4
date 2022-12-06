@@ -5,54 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../../js/loadCpuPerformance.js"></script>
+    <script src="../../js/loadCPUPerformance.js"></script>
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/canvasjs/dist/canvasjs.min.js"></script>
+    <script src="../../node_modules/canvasjs/dist/jquery.canvasjs.min.js"></script>
+    <script src="../../node_modules/canvasjs/dist/jquery.canvasjs.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="../stylesheets/scrollbar.css">
-        <link rel="stylesheet" href="../stylesheets/general.css">
-        <link rel="stylesheet" href="../stylesheets/context_menu.css">
+    <link rel="stylesheet" href="../stylesheets/scrollbar.css">
+    <link rel="stylesheet" href="../stylesheets/general.css">
+    <link rel="stylesheet" href="../stylesheets/display.css">
 </head>
 
-<body onclick="hideMenu()" onload="fetchCPUPerformance()">
-
-    <div class="container_div_60 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar">
-        <table class="table table-borderless table-custom">
-        <thead>
-            <tr>
-                <th id="pidth">PID</th>
-                <th id="user">USER</th>
-                <th id="status"> STATUS</th>
-                <th id="cputh">%CPU</th>
-                <th id="mem">%MEM</th>
-                <th>COMMAND</th>
-                
-            </tr>
-        </thead>
-        <tbody id="cpuPerformanceTable">
-        </tbody>
-
-    </table>
-
+<body>
+    <div class="container_div_48 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar"
+        style="width: auto;">
+        <span class="title">CPU Usage History</span>
+        <div class="container_div_80" id="chartContainer"></div>
+        <div class="m-3 display_CPU" id="cpuTagDiv">
+        </div>
     </div>
-    
-    <div id="contextMenu" class="context-menu" 
-        style="display:none">
-        <ul>
-            <li><a id="killProcess">Kill</a></li>
-            <li><a id="stopProcess">Suspend</a></li>
-            <li><a id="resumeProcess">Resume</a></li>
-        </ul>
-    </div>
-    
-    <div class="container_div_40 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar">
-        <span class="title">TOP COMMAND Infomation</span>
-        <table class="table table-borderless table-custom">
-            <tbody id="cpuPerformanceHead">
-            </tbody>
-        </table>
+
+    <div class="container_div_48 border border-dark rounded table-wrapper-scroll-y my-custom-scrollbar"
+        style="width: auto;">
+        <span class="title">CPU Frequency History</span>
+        <div class="container_div_80" id="chartContainerFrequency"></div>
+        <div class="m-3 display_CPU" id="cpuFreTagDiv">
+        </div>
     </div>
 </body>
-
 </html>
-

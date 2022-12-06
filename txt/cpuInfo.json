@@ -15,7 +15,7 @@
       {"field":"Model:", "data":"126"},
       {"field":"Model name:", "data":"Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz"},
       {"field":"Stepping:", "data":"5"},
-      {"field":"CPU MHz:", "data":"1200.000"},
+      {"field":"CPU MHz:", "data":"3074.739"},
       {"field":"CPU max MHz:", "data":"3600,0000"},
       {"field":"CPU min MHz:", "data":"400,0000"},
       {"field":"BogoMIPS:", "data":"2380.80"},

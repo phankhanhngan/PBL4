@@ -2,14 +2,14 @@ processor	: 0
 vendor_id	: GenuineIntel
 model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
 microcode	: 0xb2
-cpu MHz		: 1257.652
+cpu MHz		: 1200.000
 cache size	: 6144 KB
 bogomips	: 2380.80
 processor	: 1
 vendor_id	: GenuineIntel
 model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
 microcode	: 0xb2
-cpu MHz		: 1200.000
+cpu MHz		: 1965.709
 cache size	: 6144 KB
 bogomips	: 2380.80
 processor	: 2
@@ -23,7 +23,7 @@ processor	: 3
 vendor_id	: GenuineIntel
 model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
 microcode	: 0xb2
-cpu MHz		: 1200.000
+cpu MHz		: 1948.280
 cache size	: 6144 KB
 bogomips	: 2380.80
 processor	: 4
@@ -44,7 +44,7 @@ processor	: 6
 vendor_id	: GenuineIntel
 model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
 microcode	: 0xb2
-cpu MHz		: 1300.039
+cpu MHz		: 1200.000
 cache size	: 6144 KB
 bogomips	: 2380.80
 processor	: 7

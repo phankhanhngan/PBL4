@@ -1,15 +1,22 @@
 const { execSync, ChildProcess } = require("child_process"); // required module to run shell script
 
-function fetchCPUPerformance() {
+let command = `top -b -n 1| awk \'/^top -/{time = $3} $1+0>0 {printf "%-8s %-8s %-8s %-8s %-8s %-8s%%\\n", \ $1,$2,$8,$9,$10,$12 }'`;
+
+window.onload = function () {
+    fetchHead();
+    fetchProcesses();
+    setInterval(fetchProcesses, 5000);
+    setInterval(fetchHead, 3000);
+};
+
+function fetchHead() {
     let headLine = new Array();
-    let table = document.querySelector("#cpuPerformanceTable");
     let headTable = document.querySelector("#cpuPerformanceHead");
-    let out = "";
     let outHead = "";
-    table.innerHTML = "";
     headTable.innerHTML = "";
 
-    let cpuPerformanceHead = execSync(`top -b -n 1 | head -n 5 | awk '{printf "%-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s \\n", $1, $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17}'`, (err) => {
+    //Get head of top command
+    execSync(`top -b -n 1 | head -n 5 | awk '{printf "%-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s \\n", $1, $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17}'`, (err) => {
         if (err) {
             console.log(err);
         }
@@ -17,16 +24,16 @@ function fetchCPUPerformance() {
         line = line.trim().split(/\s+/);
         headLine.push(line);
     });
-
+    
     outHead+=`
         <tr>
             <td>${headLine[0][0]}</td>
-            <td>${headLine[0][2] + ' ' + headLine[0][3] + ' ' + headLine[0][4].replace(',','')}</td>
-            <td>${headLine[0][5] + ' ' + headLine[0][6].replace(',','') }</td>
-            <td>${headLine[0][7] + ' ' + headLine[0][8] }</td>
-            <td>${ headLine[0][9]}</td>
-            <td>${ headLine[0][10] }</td>
-            <td>${headLine[0][11]}</td>
+            <td>${headLine[0][2] + ' ' + headLine[0][3] + ' ' + headLine[0][4] + ' ' + headLine[0][5].replace(',','')}</td>
+            <td>${headLine[0][6] + ' ' + headLine[0][7].replace(',','') }</td>
+            <td>${headLine[0][8] + ' ' + headLine[0][9] }</td>
+            <td>${ headLine[0][10]}</td>
+            <td>${ headLine[0][11] }</td>
+            <td>${headLine[0][12]}</td>
             <td></td>
             <td></td>
         </tr>
@@ -77,10 +84,15 @@ function fetchCPUPerformance() {
         </tr>
     `;
     headTable.innerHTML = outHead;
-    
-    
+}
 
-    let cpuPerformance = execSync(`top -b -n 1 -o %MEM| awk \'/^top -/{time = $3} $1+0>0 {printf "%-8s %-8s %-8s %-8s %-8s %-8s%%\\n", \ $1,$2,$8,$9,$10,$12 }'`, (err) => {
+function fetchProcesses() {
+    let table = document.querySelector("#cpuPerformanceTable");
+    let out = "";
+    table.innerHTML = "";
+    
+    //Get processes ordered by memory usage by default
+    execSync(command, (err) => {
         if (err) {
             console.log(err);
         }
@@ -103,17 +115,11 @@ function fetchCPUPerformance() {
         el.style.backgroundColor = "rgba(0, 156, 73, 60%)";
         el.style.fontWeight = "600";
         el.style.borderRadius = "8px";
-        // el.parentElement.style.color = "#ebc334";
     });
 }
 
-setInterval(function () {
-    fetchCPUPerformance();
-}, 5000);
-
 const showContextMenu = (e, pid) => {
     document.getElementById(pid).style.backgroundColor = "#fc7c32";
-    console.log(document.getElementById(pid));
     if(e.which == "1") hideMenu();
     else if (e.which == "3") {
         e.preventDefault();
@@ -175,4 +181,17 @@ function resumeProcess(pid) {
     });
     hideMenu();
     document.getElementById(pid).style.backgroundColor = "none";
+}
+
+function changeCommand(option,id) {
+        if(document.getElementById(id).getAttribute('sort') == 'desc') {
+            document.getElementById(id).setAttribute('sort', 'asc');
+            document.getElementById(id).innerHTML = option === 'S' ? 'STATUS' : option + '<i class="fa-solid fa-sort-up"></i>'
+            command = `top -b -n 1 -o -${option}| awk \'/^top -/{time = $3} $1+0>0 {printf "%-8s %-8s %-8s %-8s %-8s %-8s%%\\n", \ $1,$2,$8,$9,$10,$12 }'`;
+        } else {
+            document.getElementById(id).setAttribute('sort', 'desc');
+            document.getElementById(id).innerHTML = option === 'S' ? 'STATUS' : option + '<i class="fa-solid fa-sort-down"></i>'
+            command = `top -b -n 1 -o ${option}| awk \'/^top -/{time = $3} $1+0>0 {printf "%-8s %-8s %-8s %-8s %-8s %-8s%%\\n", \ $1,$2,$8,$9,$10,$12 }'`;
+        }
+    console.log("click");
 }
