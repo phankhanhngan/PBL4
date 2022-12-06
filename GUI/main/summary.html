@@ -86,6 +86,7 @@
             var content = this.nextElementSibling;
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
+                content.style.minHeight = null;
             } else {
                 content.style.maxHeight = content.scrollHeight + 80 + "px";
                 content.style.minHeight = content.scrollHeight + 12 + "px";

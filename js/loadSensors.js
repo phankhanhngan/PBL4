@@ -31,18 +31,18 @@ function fetchDataSensors() {
     let count =0;
     table.innerHTML = "";
     let out = "";
-    getListCpuFan().forEach(function(line){
-        line = line.split(":");
-        if(line.length < 2) return;
-        out +=
-        `
-        <tr>
-        <td width="20%">${line[0].trim()}</td>
-        <td width="20%">Fan</td>
-        <td >${line[1].trim()}</td>
-        </tr>
-        `;
-    });
+    // getListCpuFan().forEach(function(line){
+    //     line = line.split(":");
+    //     if(line.length < 2) return;
+    //     out +=
+    //     `
+    //     <tr>
+    //     <td width="20%">${line[0].trim()}</td>
+    //     <td width="20%">Fan</td>
+    //     <td >${line[1].trim()}</td>
+    //     </tr>
+    //     `;
+    // });
     getListTemp().forEach(function(line){
         line = line.split(":");
         if(line.length < 2) return;

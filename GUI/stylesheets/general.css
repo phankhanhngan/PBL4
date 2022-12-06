@@ -117,12 +117,22 @@ tr,
 span {
     line-height: 30px;
     color: #ffffff;
+    font-weight: 400;
 }
 
 th,
 td {
     font-size: 14px;
     padding: 0px 12px;
+}
+
+th {
+    cursor: pointer;
+    line-height: 1;
+}
+
+td:first-child {
+    font-weight: 600;
 }
 
 tr:hover td {
@@ -153,4 +163,8 @@ img {
     width: 25px;
     height: 25px;
     vertical-align: middle;
+}
+
+i {
+    margin-left: 4px;
 }
