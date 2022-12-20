@@ -49,15 +49,19 @@ function fetchDataProcessor() {
     for (let processor of txtFileToJson().processor) {
         out +=
             `
-        <tr onclick="loadProcessorDetails(${processor.processor})">
+        <tr onclick="loadProcessorDetails(${processor.processor},this)">
         <td id ="processor${processor.processor}">${processor.model_name} 0:${processor.processor} ${processor.processor} ${getMaxFrequency()} Mhz</td>
         </tr>
         `;
     }
-    console.log(out);
     table.innerHTML = out;
 }
-function loadProcessorDetails(index) {
+function loadProcessorDetails(index,tr) {
+    let trs = document.querySelectorAll("#processorInfoTable tr");
+    trs.forEach((el) => {
+        el.classList.remove("active");
+    });
+    tr.classList.add("active");
     let table = document.querySelector("#processorDetailInfoTable");
     let out = "";
     for (let processor of txtFileToJson().processor) {
