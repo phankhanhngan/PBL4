@@ -1,10 +1,11 @@
 const { execSync, ChildProcess } = require("child_process"); // required module to run shell script
-const { type } = require("os");
+
 let listKernel = execSync("lsmod", (err) => {
     if (err) {
         console.log(err);
     }
 }).toString().trim().split(/\n/g);
+
 function fetchDataKernel() {
     let table = document.querySelector("#kernelTable");
     let out = "";
@@ -12,7 +13,7 @@ function fetchDataKernel() {
         line = line.split(/\s+/);
         if(line[0]!="Module"){
             out +=
-            `<tr onclick="loadKernelDetail('${line[0]}')">
+            `<tr onclick="loadKernelDetail('${line[0]}',this)">
                 <td>${line[0]}</td>
                 <td>${line[1]}</td>
                 <td>${line[2]}</td>
@@ -21,6 +22,7 @@ function fetchDataKernel() {
     });
     table.innerHTML = out;
 }
+
 function getUsedBy(line){
     let out="";
     for(let i = 2; i < line.length;i++){
@@ -28,7 +30,13 @@ function getUsedBy(line){
     }
     return out.trim();
 }
-function loadKernelDetail(module){
+
+function loadKernelDetail(module, tr){
+    let trs = document.querySelectorAll("#kernelTable tr");
+    trs.forEach((el) => {
+        el.classList.remove("active");
+    });
+    tr.classList.add("active");
     let table = document.querySelector("#kernelDetailTable");
     let out = "";
     listKernel.forEach(function(line){
@@ -42,7 +50,6 @@ function loadKernelDetail(module){
                     </tr>`
                 }
                 else{
-
                     detail = line[3].split(",");
                     for(let i =0;i<detail.length;i++){
                         out +=

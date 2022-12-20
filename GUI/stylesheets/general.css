@@ -5,9 +5,6 @@ body {
     background: repeating-linear-gradient(-55deg, #2e2e2e, #222 1px, #333 3px, #333 5px);
     overflow: hidden;
     font-family: Helvetica, Arial, sans-serif;
-
-    /* font-size: 15px; 
-            font-weight: 600; */
 }
 
 .title {
@@ -15,7 +12,8 @@ body {
     color: #5a975a;
 }
 
-.table-custom, .table-custom-onecol {
+.table-custom,
+.table-custom-onecol {
     padding: 0 30px;
     display: block;
     border-radius: 8px;
@@ -135,7 +133,7 @@ td:first-child {
     font-weight: 600;
 }
 
-tr:hover td {
+tr:hover td, tr.active td {
     background-color: #575757;
     color: #ffffff;
 }
@@ -144,17 +142,18 @@ tr:hover td {
     border-radius: 6px 0 0 6px;
 }
 
-.table-custom tr:hover td:last-child {
+.table-custom tr:hover td:last-child, .table-custom tr.active td:last-child {
     border-radius: 0 6px 6px 0;
 }
 
-.table-custom tr:hover td:first-child {
+.table-custom tr:hover td:first-child, .table-custom tr.active td:first-child {
     border-radius: 6px 0px 0px 6px;
 }
 
-.table-custom-onecol tr:hover td{
+.table-custom-onecol tr:hover td, .table-custom-onecol tr.active td {
     border-radius: 6px;
 }
+
 .collapsible_button.extraInfo {
     color: rgba(0, 156, 73, 255);
 }

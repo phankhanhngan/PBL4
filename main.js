@@ -24,7 +24,7 @@ async function createWindow() {
   });
 
   // Load app
-  win.loadFile(path.join(__dirname, "./GUI/index.html"));
+  win.loadFile(path.join(__dirname, "./GUI/login.html"));
 
   // rest of code..
 }
