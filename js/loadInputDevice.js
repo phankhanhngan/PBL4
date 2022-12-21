@@ -1,13 +1,16 @@
 const { execSync, ChildProcess } = require("child_process"); // required module to run shell script
-function listInputDevice() {
-    var info = {
-        inputDevices: []
-    };
-    let data = execSync("cat /proc/bus/input/devices | egrep 'I:|N: Name=|P:|H:'", (err) => {
-        if (err) {
-            console.log(err);
-        }
-    }).toString().split(/\n/g);
+
+var info = {
+    inputDevices: []
+};
+
+let data = execSync("cat /proc/bus/input/devices | egrep 'I:|N: Name=|P:|H:'", (err) => {
+    if (err) {
+        console.log(err);
+    }
+}).toString().split(/\n/g);
+
+function fetchDataInputDevice() {
     let totalDevice = (data.length - 1) / 4;
     let type = "";
     for (let i = 0; i < totalDevice; i++) {
@@ -32,36 +35,40 @@ function listInputDevice() {
         }
         info.inputDevices.push(obj);
     };
-    return info;
-}
-function fetchDataInputDevice() {
+
     let table = document.querySelector("#inputDeviceTable");
     let out = "";
     let url = "";
-    for (let [index,input] of listInputDevice().inputDevices.entries()) {
+    for (let [index,input] of info.inputDevices.entries()) {
         if(input.type == "Keyboard"){
-            url = "/home/brooklyn/PBL4/PBL4/GUI/icon/icons8-keyboard-80.png";
+            icon = '<i class="fa-solid fa-keyboard"></i>';
         }
         else if (input.type == "Mouse"){
-            url = "/home/brooklyn/PBL4/PBL4/GUI/icon/icons8-mouse-80.png";
+            icon = '<i class="fa-solid fa-mouse"></i>'; 
         }
         else {
-            url = "/home/brooklyn/PBL4/PBL4/GUI/icon/question-mark.png";
+            icon = '<i class="fa-solid fa-question"></i>';
         }
         out +=
             `
-        <tr onclick="loadInputDeviceDetails(${index})">
-        <td ><img src="${url}">&nbsp; ${input.name}</td>
+        <tr onclick="loadInputDeviceDetails(${index},this)">
+        <td >${icon} &nbsp; <span>${input.name}</span></td>
         </tr>
         `;
     }
     table.innerHTML = out;
 }
 
-function loadInputDeviceDetails(indexValue) {
+function loadInputDeviceDetails(indexValue,tr) {
+    let trs = document.querySelectorAll("#inputDeviceTable tr");
+    trs.forEach((el) => {
+        el.classList.remove("active");
+    });
+    tr.classList.add("active");
+
     let table = document.querySelector("#infoTable");
     let out = "";
-    for (let [index,input] of listInputDevice().inputDevices.entries()) {
+    for (let [index,input] of info.inputDevices.entries()) {
         if (indexValue == index) {
             out +=
                 `

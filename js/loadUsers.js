@@ -12,7 +12,7 @@ function fetchDataUser() {
         line = line.split(":");
         out +=
             `
-        <tr onclick="loadUserDetail('${line[0].toString()}')">
+        <tr onclick="loadUserDetail('${line[0].toString()}',this)">
         <td width="25%">${line[0]}</td>
         <td width="75%">${line[4].replaceAll(",","")}</td>
         </tr>
@@ -20,7 +20,12 @@ function fetchDataUser() {
     });
     table.innerHTML = out;
 }
-function loadUserDetail(index) {
+function loadUserDetail(index,tr) {
+    let trs = document.querySelectorAll("#usersInfoTable tr");
+    trs.forEach((el) => {
+        el.classList.remove("active");
+    });
+    tr.classList.add("active");
     let table = document.querySelector("#usersDetailInfoTable");
     let out = "";
     listUsers.forEach(function(line){

@@ -6,123 +6,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./stylesheets/nav.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./stylesheets/scrollbar.css">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
+    <link rel="stylesheet" href="./stylesheets/nav.css">
+    <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="./assets/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="./assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        function handleClick(opt) {
+            let allOpts = document.querySelectorAll(".nav_opts");
+            allOpts.forEach((el) => {
+                el.classList.remove("active");
+            });
+            opt.classList.add("active");
         }
-
-        a {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        span {
-            vertical-align: middle;
-        }
-
-        img {
-            vertical-align: middle;
-        }
-    </style>
+    </script>
 </head>
 
 <body>
     <div class="nav_container">
         <ul class="nav">
             <li>
-                <img src="./icon/icons8-workstation-64.png" alt="" height="30px" width="30px"><span
-                    class="nav_fields">Computer</span>
+                <span class="nav_fields">COMPUTER</span>
                 <ul class="sub_nav">
                     <li>
-                        <a target="main" href="./main/summary.html" class="nav_opts"><img
-                                src="./icon/icons8-information-64.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Summary</span></a>
+                        <a target="main" href="./main/summary.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-table-list"></i>
+                            <span>&nbsp;Summary</span></a>
                     </li>
                     <li>
-                        <a target="main" href="./main/CPU.html" class="nav_opts"><img
-                                src="./icon/icons8-processor-64.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Cpu</span></a>
+                        <a target="main" href="./main/CPU.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-hard-drive"></i>
+                            <span>&nbsp;CPU</span></a>
                     </li>
                     <li>
-                        <a target="main" href="./main/cpuPerformance.html" class="nav_opts"><img
-                                src="./icon/icons8-performance-64.png" alt="" height="30px" width="30px"><span>&nbsp;Cpu
-                                Performance</span></a>
+                        <a target="main" href="./main/processes.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>&nbsp;Processes</span></a>
                     </li>
                     <li>
-                        <a target="main" href="./main/kernel.html" class="nav_opts"><img
-                                src="./icon/icons8-linux-64.png" alt="" height="30px" width="30px"><span>&nbsp;Kernel
-                                Modules</span></a>
+                        <a target="main" href="./main/kernel.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-brands fa-linux"></i>
+                            <span>&nbsp;Kernel Modules</span></a>
                     </li>
                     <li>
-                        <a target="main" href="./main/filesystems.html" class="nav_opts"><img
-                                src="./icon/icons8-hdd-80.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Filesystems</span></a>
+                        <a target="main" href="./main/filesystems.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-folder-tree"></i>
+                            <span>&nbsp;Filesystems</span></a>
                     </li>
                     <li>
-                        <a target="main" href="./main/display.html" class="nav_opts"><img
-                                src="./icon/icons8-monitor-40.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Display</span></a>
+                        <a target="main" href="./main/cpuPerformance.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-display"></i>
+                            <span>&nbsp;CPU Performance</span></a>
                     </li>
                     <li>
-                        <a target="main" href="./main/envVariable.html" class="nav_opts"><img
-                                src="./icon/icons8-console-64.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Environment Variables</span></a>
+                        <a target="main" href="./main/envVariable.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <span>&nbsp;Environment Variables</span></a>
                     </li>
                     <li>
-                        <a target="main" href="./main/user.html" class="nav_opts"><img src="./icon/icons8-people-80.png"
-                                alt="" height="30px" width="30px"><span>&nbsp;Users</span></a>
+                        <a target="main" href="./main/user.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-user"></i>
+                            <span>&nbsp;Users</span></a>
                     </li>
                     <li>
-                        <a target="main" href="./main/group.html" class="nav_opts"><img src="./icon/icons8-people-80.png"
-                                alt="" height="30px" width="30px"><span>&nbsp;Groups</span></a>
+                        <a target="main" href="./main/group.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-users"></i>
+                            <span>&nbsp;Groups</span></a>
                     </li>
                 </ul>
 
             </li>
             <li>
-                <img src="./icon/icons8-device-60.png" alt="" height="30px" width="30px"><span
-                    class="nav_fields">Devices</span>
+                <span class="nav_fields nav_fields_last">DEVICES</span>
                 <ul class="sub_nav">
-                    <li>
-                        <a target="main" href="./main/processor.html" class="nav_opts"><img
-                                src="./icon/icons8-electronics-64.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Processor</span></a>
+                    <li class="subnav-opt">
+                        <a target="main" href="./main/processor.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-microchip"></i>
+                            <span>&nbsp;Processor</span></a>
                     </li>
-                    <li>
-                        <a href="./main/memory.html" target="main" class="nav_opts"><img
-                                src="./icon/icons8-memory-slot-64.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Memory</span></a>
+                    <li class="subnav-opt">
+                        <a href="./main/memory.html" target="main" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-memory"></i>
+                            <span>&nbsp;Memory</span></a>
                     </li>
-                    <li>
-                        <a href="./main/battery.html" target="main" class="nav_opts"><img
-                                src="./icon/icons8-empty-battery-64.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Battery</span></a>
+                    <li class="subnav-opt">
+                        <a href="./main/battery.html" target="main" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-battery-half"></i>
+                            <span>&nbsp;Battery</span></a>
                     </li>
-                    <li>
-                        <a href="./main/sensors.html" target="main" class="nav_opts"><img
-                                src="./icon/icons8-thermometer-80.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;Sensors</span></a>
+                    <li class="subnav-opt">
+                        <a href="./main/sensors.html" target="main" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-temperature-arrow-up"></i>
+                            <span>&nbsp;Sensors</span></a>
                     </li>
-                    <li>
-                        <a href="./main/pci.html" target="main" class="nav_opts"><img src="./icon/pci-card.png" alt=""
-                                height="30px" width="30px"><span>&nbsp;PCI Devices</span></a>
+                    <li class="subnav-opt">
+                        <a href="./main/pci.html" target="main" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-server"></i>
+                            <span>&nbsp;PCI Devices</span></a>
                     </li>
-                    <li>
-                        <a href="./main/usb.html" target="main" class="nav_opts"><img src="./icon/usb.png" alt=""
-                                height="30px" width="30px"><span>&nbsp;USB Devices</span></a>
+                    <li class="subnav-opt">
+                        <a href="./main/usb.html" target="main" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-brands fa-usb"></i>
+                            <span>&nbsp;USB Devices</span></a>
                     </li>
-                    <li>
-                        <a href="./main/input.html" target="main" class="nav_opts"><img
-                                src="./icon/keyboard-and-mouse.png" alt="" height="30px" width="30px"><span>&nbsp;Input
-                                Devices</span></a>
+                    <li class="subnav-opt">
+                        <a href="./main/input.html" target="main" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-solid fa-computer-mouse"></i>
+                            <span>&nbsp;Input Devices</span></a>
                     </li>
-                    <li>
-                        <a target="main" href="./main/dmi.html" class="nav_opts"><img
-                                src="./icon/icons8-workstation-64.png" alt="" height="30px"
-                                width="30px"><span>&nbsp;DMI</span></a>
+                    <li class="subnav-opt">
+                        <a target="main" href="./main/dmi.html" class="nav_opts" onclick="handleClick(this)">
+                            <i class="fa-brands fa-ubuntu"></i>
+                            <span>&nbsp;DMI</span></a>
                     </li>
                 </ul>
             </li>

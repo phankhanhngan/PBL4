@@ -2,11 +2,12 @@ const fs = require('fs');
 const { execSync, ChildProcess } = require("child_process"); // required module to run shell script
 function commandToTxtFile() {
     // run command to get all row in lscpu to json file and overwrite it to folder txt\ and return that json file
-    let a = execSync("cat /proc/cpuinfo | egrep 'processor|model name|vendor_id|microcode|cache size|cpu MHz|bogomips' > ./txt/processor.txt", (err) => {
+    let a = execSync("cat /proc/cpuinfo | egrep 'processor|model name|vendor_id|microcode|cache size|cpu MHz|bogomips'", (err) => {
         if (err) {
             console.log(err);
         }
     });
+    return a.toString();
 }
 function getMaxFrequency(){
     let a = execSync("lscpu | grep 'CPU max MHz'", (err) => {
@@ -18,12 +19,11 @@ function getMaxFrequency(){
 }
 getMaxFrequency();
 function txtFileToJson() {
-    commandToTxtFile();
     var info = {
         processor: []
     };
     // info empty to json
-    var data = fs.readFileSync('./txt/processor.txt').toString();
+    var data = commandToTxtFile();
     data = data.split(/\n/g);
     let totalCore = (data.length - 1) / 7;
     for (let i = 0; i < totalCore; i++) {
@@ -49,15 +49,19 @@ function fetchDataProcessor() {
     for (let processor of txtFileToJson().processor) {
         out +=
             `
-        <tr onclick="loadProcessorDetails(${processor.processor})">
+        <tr onclick="loadProcessorDetails(${processor.processor},this)">
         <td id ="processor${processor.processor}">${processor.model_name} 0:${processor.processor} ${processor.processor} ${getMaxFrequency()} Mhz</td>
         </tr>
         `;
     }
-    console.log(out);
     table.innerHTML = out;
 }
-function loadProcessorDetails(index) {
+function loadProcessorDetails(index,tr) {
+    let trs = document.querySelectorAll("#processorInfoTable tr");
+    trs.forEach((el) => {
+        el.classList.remove("active");
+    });
+    tr.classList.add("active");
     let table = document.querySelector("#processorDetailInfoTable");
     let out = "";
     for (let processor of txtFileToJson().processor) {

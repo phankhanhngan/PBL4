@@ -1,114 +1,169 @@
 html,
-        body {
-            margin: 0px;
-            height: 100%;
-            background-color: rgb(77, 76, 76);
-            overflow: hidden;
-            font-size: 15px; 
-            font-weight: 600;
-        }
+body {
+    margin: 0px;
+    height: 100%;
+    background: repeating-linear-gradient(-55deg, #2e2e2e, #222 1px, #333 3px, #333 5px);
+    overflow: hidden;
+    font-family: Helvetica, Arial, sans-serif;
+}
 
-        .container_div_50 {
-            height: 50%;
-            background-color: rgb(58, 58, 58);
-            margin: 10px 10px 10px 10px;
-            padding: 8px 8px 8px 8px;
-        }
-        .container_div_48 {
-            height: 48%;
-            background-color: rgb(58, 58, 58);
-            margin: 10px 10px 10px 10px;
-            padding: 8px 8px 8px 8px;
-        }
-        .container_div_100 {
-            height: 100%;
-            background-color: rgb(58, 58, 58);
-            margin: 10px 10px 10px 10px;
-            padding: 8px 8px 8px 8px;
-        }
-        .container_div_25 {
-            height: 25%;
-            background-color: rgb(58, 58, 58);
-            margin: 10px 10px 10px 10px;
-            padding: 8px 8px 8px 8px;
-        }
-        .container_div_70 {
-            height: 70%;
-            background-color: rgb(58, 58, 58);
-            margin: 10px 10px 10px 10px;
-            padding: 8px 8px 8px 8px;
-        }
-        .container_div_60 {
-            height: 60%;
-            background-color: rgb(58, 58, 58);
-            margin: 10px 10px 10px 10px;
-            padding: 8px 8px 8px 8px;
-        }
-        .container_div_40 {
-            height: 40%;
-            width: auto;
-            background-color: rgb(58, 58, 58);
-            margin: 10px 10px 10px 10px;
-            padding: 8px 8px 8px 8px;
-        }
-        .container_div_90 {
-            height: 90%;
-            width: 100%;
-        }
-        .container_div_80 {
-            height: 80%;
-            width: 100%;
-        }
-        .container_div_85 {
-            height: 85%;
-            width: 100%;
-        }
-        .container_div_70_2 {
-            height: 70%;
-            width: auto;
-        }
-        .container_div_20 {
-            height: 80%;
-            width: 100%;
-        }
+.title {
+    font-weight: bold;
+    color: #5a975a;
+}
 
-        .container_div_30 {
-            height: 30%;
-            background-color: rgb(58, 58, 58);
-            margin: 10px 10px 10px 10px;
-            padding: 8px 8px 8px 8px;
-        }
+.table-custom,
+.table-custom-onecol {
+    padding: 0 30px;
+    display: block;
+    border-radius: 8px;
+    background: rgba(59, 59, 59, 0.582);
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+}
 
-        .my-custom-scrollbar {
-            position: relative;
-            overflow: auto;
-        }
+.container_div_50 {
+    height: 50%;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+}
 
-        .table-wrapper-scroll-y {
-            display: block;
-        }
-        th,p{
-            color: rgba(0,156,73,255);
-            font-size: 16px;
-        }
-        tr,
-        span {
-            color: #ffffff;
-        }
+.container_div_48 {
+    height: 48%;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+}
 
-        th,
-        td {
-            padding: 5px 8px;
-        }
-        tr:hover td {
-            background-color: #fc7c32;
-            color: #ffffff;
-        }
+.container_div_100 {
+    height: 100%;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+}
 
-        tr:hover th {
-            border-radius: 6px 0 0 6px;
-        }
+.container_div_25 {
+    height: 25%;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+}
 
-        tr:hover td:last-child {
-            border-radius: 0 6px 6px 0;
-        }
+.container_div_70 {
+    height: 70%;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+}
+
+.container_div_60 {
+    height: 60%;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+}
+
+.container_div_40 {
+    height: 40%;
+    width: auto;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+}
+
+.container_div_90 {
+    height: 90%;
+    width: 100%;
+}
+
+.container_div_80 {
+    height: 80%;
+    width: 100%;
+}
+
+.container_div_85 {
+    height: 85%;
+    width: 100%;
+}
+
+.container_div_70_2 {
+    height: 70%;
+    width: auto;
+}
+
+.container_div_20 {
+    height: 80%;
+    width: 100%;
+}
+
+.container_div_30 {
+    height: 30%;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+th,
+p {
+    color: rgba(0, 156, 73, 255);
+    font-size: 16px;
+}
+
+tr,
+span {
+    line-height: 30px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+th,
+td {
+    font-size: 14px;
+    padding: 0px 12px;
+}
+
+th {
+    cursor: pointer;
+    line-height: 1;
+}
+
+td:first-child {
+    font-weight: 600;
+}
+
+tr:hover td, tr.active td {
+    background-color: #575757;
+    color: #ffffff;
+}
+
+.table-custom tr:hover th {
+    border-radius: 6px 0 0 6px;
+}
+
+.table-custom tr:hover td:last-child, .table-custom tr.active td:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+.table-custom tr:hover td:first-child, .table-custom tr.active td:first-child {
+    border-radius: 6px 0px 0px 6px;
+}
+
+.table-custom-onecol tr:hover td, .table-custom-onecol tr.active td {
+    border-radius: 6px;
+}
+
+.collapsible_button.extraInfo {
+    color: rgba(0, 156, 73, 255);
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+i {
+    margin-left: 4px;
+}

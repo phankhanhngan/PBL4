@@ -1,0 +1,116 @@
+{
+    yValueFormatString : "## '%'",
+    ValueFormatString : "",
+    markerSize: 0,
+    name: "Cpu1",
+    type: "spline",
+    lineThickness: 2,
+    dataPoints: dataPoints1,
+    color: "red",
+
+},
+{
+    yValueFormatString : "## '%'",
+    markerSize: 0,
+    name: "Cpu2",
+    type: "spline",
+    dataPoints: dataPoints2,
+    color: "blue",
+},
+{
+    yValueFormatString : "## '%'",
+    markerSize: 0,
+    name: "Cpu3",
+    type: "spline",
+    lineThickness: 2,
+    dataPoints: dataPoints3,
+    color: "fuchsia",
+},
+{
+    yValueFormatString : "## '%'",
+    markerSize: 0,
+    name: "Cpu4",
+    type: "spline",
+    lineThickness: 2,
+    dataPoints: dataPoints4,
+    color: "green",
+},
+{
+    yValueFormatString : "## '%'",
+    markerSize: 0,
+    name: "Cpu5",
+    type: "spline",
+    lineThickness: 2,
+    dataPoints: dataPoints5,
+    color: "lime",
+},
+{
+    yValueFormatString : "## '%'",
+    markerSize: 0,
+    name: "Cpu6",
+    type: "spline",
+    lineThickness: 2,
+    dataPoints: dataPoints6,
+    color: "yellow",
+},
+{
+    yValueFormatString : "## '%'",
+    markerSize: 0,
+    name: "Cpu7",
+    type: "spline",
+    lineThickness: 2,
+    dataPoints: dataPoints7,
+    color: "navy",
+},
+{
+    yValueFormatString : "## '%'",
+    markerSize: 0,
+    name: "Cpu8",
+    type: "spline",
+    lineThickness: 2,
+    dataPoints: dataPoints8,
+    color: "aqua",
+}
+
+axisX: {
+    gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0.5,
+    margin: 10,
+    labelFormatter: function () {
+        return " ";
+    }
+},
+axisY: {
+    // lineColor: "white",
+    // gridColor: "white",
+    // gridDashType: "shortDash",
+    gridThickness: 0.5,
+    tickThickness: 0.5,
+    suffix: "%",
+    // tickColor: "white",
+    lineThickness: 0.5,
+    labelFontColor: "white",
+    labelFontSize: 10,
+
+    axisX: {
+        gridThickness: 0,
+        tickLength: 0,
+        lineThickness: 0.5,
+        margin: 10,
+        labelFormatter: function () {
+            return " ";
+        }
+    },
+    axisY: {
+        // lineColor: "white",
+        // gridColor: "white",
+        // gridDashType: "shortDash",
+        gridThickness: 0.5,
+        tickThickness: 0.5,
+        suffix: " Mhz",
+        // tickColor: "white",
+        lineThickness: 0.5,
+        labelFontColor: "white",
+        labelFontSize: 10,
+    },

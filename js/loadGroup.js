@@ -4,6 +4,7 @@ let listGroup = execSync("cat /etc/group", (err) => {
         console.log(err);
     }
 }).toString().trim().split(/\n/g);
+
 function fetchDataGroup() {
     let table = document.querySelector("#groupInfoTable");
     let out = "";

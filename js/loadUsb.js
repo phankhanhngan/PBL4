@@ -9,6 +9,7 @@ function listUsbDevices() {
         }
     }).toString().split(/\n/g);
     let totalDevice = (data.length - 1) / 5;
+    console.log(totalDevice);
     for (let i = 0; i < totalDevice; i++) {
         let index = i > 0 ? i * 6 - i : i * totalDevice;
         let obj = {
