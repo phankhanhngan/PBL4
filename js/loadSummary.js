@@ -119,6 +119,12 @@ function fetchData(){
     tableDisplay.innerHTML = out;
     tableAudio.innerHTML = outAudio;
     tableInput.innerHTML = outDevice;
+
+    var coll = document.getElementsByClassName("collapsible_button");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+        coll[i].click();
+    }
 }
 
 

@@ -1,44 +1,35 @@
 const fs = require('fs');
 const { execSync } = require("child_process"); // required module to run shell script
-function  commandToTxtFile() {
-    // run command to get all row in lscpu to json file and overwrite it to folder txt\ and return that json file
+let bios = execSync('sudo dmidecode -t bios', (err) => {
+    if (err) {
+        console.log(err);
+    } 
+}).toString();
 
-    execSync('sudo dmidecode -t bios  > ./txt/dmi_bios.txt', (err) => {
+let system = execSync('sudo dmidecode -t system', (err) => {
 
-        if (err) {
-            console.log(err);
-        } 
-    });
+    if (err) {
+        console.log(err);
+    } 
+}).toString();
 
-    execSync('sudo dmidecode -t system  > ./txt/dmi_system.txt', (err) => {
+let baseboard = execSync('sudo dmidecode -t baseboard', (err) => {
 
-        if (err) {
-            console.log(err);
-        } 
-    });
+    if (err) {
+        console.log(err);
+    } 
+}).toString();
 
-    execSync('sudo dmidecode -t baseboard  > ./txt/dmi_baseboard.txt', (err) => {
+let chassis = execSync('sudo dmidecode -t chassis', (err) => {
 
-        if (err) {
-            console.log(err);
-        } 
-    });
-
-    execSync('sudo dmidecode -t chassis  > ./txt/dmi_chassis.txt', (err) => {
-
-        if (err) {
-            console.log(err);
-        } 
-    });
-}
+    if (err) {
+        console.log(err);
+    } 
+}).toString();
 function infoBios() {
-
-    commandToTxtFile();
     var dmi = {};
     dmi.bios = [];
-    var data = fs.readFileSync('./txt/dmi_bios.txt').toString();
-
-    data.split(/\n/g).forEach(function(line){
+    bios.split(/\n/g).forEach(function(line){
         line = line.split(':');
         if (line.length < 2) {
             return;
@@ -52,19 +43,12 @@ function infoBios() {
             dmi.bios.push(obj); 
         }
     });
-    // for (let x in dmi.bios){
-    //     console.log(dmi.bios[x].field + ": " + dmi.bios[x].data);
-    // }
     return dmi.bios;
 }
 function infoSystem() {
-    commandToTxtFile();
     var dmi = {};
     dmi.system = [];
-
-    var data = fs.readFileSync('./txt/dmi_system.txt').toString();
-
-    data.split(/\n/g).forEach(function(line){
+    system.split(/\n/g).forEach(function(line){
         line = line.split(':');
         if (line.length < 2) {
             return;
@@ -78,19 +62,12 @@ function infoSystem() {
             dmi.system.push(obj); 
         }
     });
-    // for (let x in dmi.system){
-    //     console.log(dmi.system[x].field + ": " + dmi.system[x].data);
-    // }
     return dmi.system;
 }
 function infoBaseboard() {
-    commandToTxtFile();
     var dmi = {};
     dmi.board = [];
-
-    var data = fs.readFileSync('./txt/dmi_baseboard.txt').toString();
-
-    data.split(/\n/g).forEach(function(line){
+    baseboard.split(/\n/g).forEach(function(line){
         line = line.split(':');
         if (line.length < 2) {
             return;
@@ -111,19 +88,12 @@ function infoBaseboard() {
             dmi.board.push(obj); 
         }
     });
-    // for (let x in dmi.board){
-    //     console.log(dmi.board[x].field + ": " + dmi.board[x].data);
-    // }
     return dmi.board;
 }
 function infoChassis() {
-    commandToTxtFile();
     var dmi = {};
     dmi.chassis = [];
-
-    var data = fs.readFileSync('./txt/dmi_chassis.txt').toString();
-
-    data.split(/\n/g).forEach(function(line){
+    chassis.split(/\n/g).forEach(function(line){
         line = line.split(':');
         if (line.length < 2) {
             return;
@@ -143,14 +113,10 @@ function infoChassis() {
             dmi.chassis.push(obj); 
         }
     });
-    // for (let x in dmi.chassis){
-    //     console.log(dmi.chassis[x].field + ": " + dmi.chassis[x].data);
-    // }
     return dmi.chassis;
 }
 function fetchData(){
-    let tableBios = document.querySelector("#tableBios");
-
+    let biosTable = document.querySelector("#biosTable");
     let tableProduct = document.querySelector("#tableProducts");
     let tableBoard = document.querySelector("#tableBoard");
     let tableChassis = document.querySelector("#tableChassis");
@@ -170,8 +136,7 @@ function fetchData(){
             </tr>
             `
     }
-    tableBios.innerHTML = out;
-
+    biosTable.innerHTML = out;
     out = "";
     for (let x in system){
             out += `
@@ -202,6 +167,10 @@ function fetchData(){
             `
     }
     tableChassis.innerHTML = out;
+    var coll = document.getElementsByClassName("collapsible_button");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+        coll[i].click();
+    }
     // ko load dc table@@
 }
-fetchData();

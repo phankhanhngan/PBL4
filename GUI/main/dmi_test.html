@@ -7,12 +7,89 @@
     <title>Document</title>
     <script src="../../js/loadDMI.js"></script>
 </head>
+<style>
+    * {
+        margin: 0;
+        background-color: black;
+    }
+    .collapsible_button {
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
 
+ .collapsible_button:hover {
+    background-color: rgba(32,54,43,255);
+    color: rgba(0,156,73,255);
+    border-radius: 8px;
+}
+
+.collapse_data {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color: white;
+}
+</style>
 <body onload="fetchData()">
-    BIOS
-    <table>
-        <tbody id ="tableBios">
-        </tbody>
-    </table>
+    <div class="os_container">
+        <button class="collapsible_button">Product</button>
+        <div class="collapse_data">
+            <table>
+
+                <tbody id="tableProducts">
+
+                </tbody>
+            </table>
+        </div>
+        <button class="collapsible_button">BIOS</button>
+        <div class="collapse_data">
+            <table>
+                <tbody id="tableBios">
+                </tbody>
+            </table>
+        </div>
+        <button class="collapsible_button">Board</button>
+        <div class="collapse_data">
+            <table>
+
+                <tbody id="tableBoard">
+
+                </tbody>
+            </table>
+        </div>
+        <button class="collapsible_button">Chassis</button>
+        <div class="collapse_data">
+            <table>
+
+                <tbody id="tableChassis">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
+<script>
+    var coll = document.getElementsByClassName("collapsible_button");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
 </html>
