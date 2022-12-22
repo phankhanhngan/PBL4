@@ -18,17 +18,23 @@ function fetchHead() {
     //Get head of top command
     execSync(`top -b -n 1 | head -n 5 | awk '{printf "%-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %-8s \\n", $1, $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17}'`, (err) => {
         if (err) {
-            console.log(err);
         }
     }).toString().trim().split(/\n/g).forEach((line) => {
         line = line.trim().split(/\s+/);
+        if(line[0] === 'top') {
+            if(line.length !== 13) {
+                line.splice(5, 0, 'hour');
+            }
+            console.log(line);
+        }
         headLine.push(line);
     });
-
+    console.log(headLine);
     outHead += `
         <tr>
             <td>${headLine[0][0]}</td>
-            <td>${headLine[0][2] + ' ' + headLine[0][3] + ' ' + headLine[0][4] + ' ' + headLine[0][5].replace(',', '')}</td>
+            <td>${headLine[0][2]}</td>
+            <td>${headLine[0][3] + ' ' + headLine[0][4].replace(',', '') + ' ' + headLine[0][5].replace(',', '')}</td>
             <td>${headLine[0][6] + ' ' + headLine[0][7].replace(',', '')}</td>
             <td>${headLine[0][8] + ' ' + headLine[0][9]}</td>
             <td>${headLine[0][10]}</td>
@@ -94,7 +100,6 @@ function fetchProcesses() {
     //Get processes ordered by memory usage by default
     execSync(command, (err) => {
         if (err) {
-            console.log(err);
         }
     }).toString().trim().split(/\n/g).forEach(function (line) {
         line = line.trim().split(/\s+/)
@@ -169,7 +174,6 @@ function stopProcess(pid) {
 function resumeProcess(pid) {
     execSync(`kill -CONT ${pid}`, (err) => {
         if (err) {
-            console.log(err);
         }
     });
     hideMenu();
