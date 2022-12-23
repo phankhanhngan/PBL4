@@ -25,11 +25,9 @@ function fetchHead() {
             if(line.length !== 13) {
                 line.splice(5, 0, 'hour');
             }
-            console.log(line);
         }
         headLine.push(line);
     });
-    console.log(headLine);
     outHead += `
         <tr>
             <td>${headLine[0][0]}</td>

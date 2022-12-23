@@ -7,12 +7,15 @@ processor = execSync("lscpu | grep 'Model name'", (err) => {
         console.log(err);
     } 
 }).toString().split(":")[1].trim();
+
+const password = localStorage.getItem("password");
+
 memory = execSync("cat /proc/meminfo | grep 'MemTotal'", (err) => {
     if (err) {
         console.log(err);
     } 
 }).toString().split(":")[1].trim();
-machine_type = execSync("sudo dmidecode -t chassis | grep 'Type'", (err) => {
+machine_type = execSync(`echo ${password}| sudo -S dmidecode -t chassis | grep 'Type'`, (err) => {
     if (err) {
         console.log(err);
     } 

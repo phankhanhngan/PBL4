@@ -1,11 +1,11 @@
 const { execSync } = require("child_process"); // required module to run shell script
 
-let data = execSync('sudo df -Th', (err) => {
+let data = execSync('df -Th', (err) => {
     if (err) {
         console.log(err);
     }
 }).toString().trim().split(/\n/g);
-
+console.log(window.password);
 function fetchDataFileSystem() {
     var info = {};
     info.filesystem = [];
