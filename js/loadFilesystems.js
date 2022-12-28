@@ -1,6 +1,8 @@
 const { execSync } = require("child_process"); // required module to run shell script
 
-let data = execSync('df -Th', (err) => {
+const password = localStorage.getItem("password");
+
+let data = execSync(`echo ${password} | sudo -S df -Th`, (err) => {
     if (err) {
         console.log(err);
     }

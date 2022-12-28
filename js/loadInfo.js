@@ -11,6 +11,7 @@ function fetchData() {
     let out = "";
     data.shift();
     data.shift();
+    data.length = data.length - 2;
     data.forEach(line => {
         line = line.replaceAll(":", "").split("\"");
         out +=
